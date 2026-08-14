@@ -18,6 +18,7 @@ link zshrc .zshrc
 link zprofile .zprofile
 link gitconfig .gitconfig
 link gitconfig-work .gitconfig-work
+link gitignore_global .gitignore_global
 mkdir -p "$HOME/.ssh"
 link ssh_config .ssh/config
 chmod 700 "$HOME/.ssh"

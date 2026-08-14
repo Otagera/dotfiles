@@ -2,6 +2,8 @@ tap "anomalyco/tap"
 tap "mongodb/brew", trusted: true
 # Distributed revision control system
 brew "git"
+# Syntax-highlighting pager for git, diff, grep, and blame output
+brew "git-delta"
 # Open source relational database management system
 brew "mysql@8.0", restart_service: :changed, link: true
 # Ambitious Vim-fork focused on extensibility and agility
