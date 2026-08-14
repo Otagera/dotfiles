@@ -24,7 +24,15 @@ link ssh_config .ssh/config
 chmod 700 "$HOME/.ssh"
 chmod 644 "$HOME/.ssh/config"
 
+chmod +x "$DOTFILES/bin/rclone-backup-personal.sh"
+mkdir -p "$HOME/Library/Logs/rclone-backup"
+cp "$DOTFILES/com.othnielagera.rclone-backup-personal.plist" "$HOME/Library/LaunchAgents/"
+
 echo
 echo "Dotfiles linked. Now run:"
 echo "  brew bundle install --file=$DOTFILES/Brewfile"
 echo "Then restore SSH keys separately (never stored in this repo) and start a new shell."
+echo
+echo "Personal backup (rclone → Google Drive):"
+echo "  1. rclone config   # re-authenticate the 'gdrive' remote (not stored in this repo)"
+echo "  2. launchctl bootstrap gui/\$(id -u) $HOME/Library/LaunchAgents/com.othnielagera.rclone-backup-personal.plist"

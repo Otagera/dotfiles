@@ -114,7 +114,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$HOME/.local/bin:$PATH"
 
 alias claude-work='CLAUDE_CONFIG_DIR=~/.claude-work /Users/othnielagera/.local/bin/claude'
-alias claude-personal='CLAUDE_CONFIG_DIR=~/.claude-personal /path/to/bin/claude'
+alias claude-personal='CLAUDE_CONFIG_DIR=~/.claude-personal /Users/othnielagera/.local/bin/claude'
 alias claude="echo 'Use specific commands: claude-work or claude-personal'"
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 

@@ -1,0 +1,24 @@
+# Regenerable / build-output directories excluded from the personal_stuv backup.
+# bin/ and obj/ are scoped to the C# folder specifically, since bin/ is often
+# a real committed CLI entry point in Node packages, not build output.
+- node_modules/**
+- .next/**
+- .nuxt/**
+- .parcel-cache/**
+- coverage/**
+- target/**
+- .gradle/**
+- venv/**
+- .venv/**
+- __pycache__/**
+- .pytest_cache/**
+- vendor/**
+- .bundle/**
+- Pods/**
+- DerivedData/**
+- .terraform/**
+- .stack-work/**
+- _build/**
+- personal_stuv/C#/**/bin/**
+- personal_stuv/C#/**/obj/**
+- .DS_Store
