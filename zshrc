@@ -125,3 +125,23 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Auto-refresh ~/dotfiles/Brewfile after any brew install/uninstall/tap change
+brew() {
+  command brew "$@"
+  local status=$?
+  case "$1" in
+    install|uninstall|rm|reinstall|tap|untap)
+      (
+        cd ~/dotfiles || exit 0
+        command brew bundle dump --force --file=Brewfile >/dev/null 2>&1
+        if ! git diff --quiet -- Brewfile 2>/dev/null; then
+          git add Brewfile
+          git commit -q -m "Update Brewfile ($(date +%Y-%m-%d))"
+          git push -q 2>/dev/null || echo "(dotfiles: Brewfile committed locally, push failed — push manually later)"
+        fi
+      )
+      ;;
+  esac
+  return $status
+}
