@@ -1,0 +1,6 @@
+[user]
+	name = Othniel Agera
+	email = otagera@gmail.com
+
+[includeIf "gitdir:~/source/ravebyflutterwave/"]
+	path = ~/.gitconfig-work
