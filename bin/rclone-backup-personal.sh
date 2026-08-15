@@ -11,6 +11,11 @@ FILTERS="$HOME/dotfiles/rclone-filters.txt"
 LOG_DIR="$HOME/Library/Logs/rclone-backup"
 mkdir -p "$LOG_DIR"
 
+if ! curl -s --max-time 5 -o /dev/null https://www.google.com; then
+  echo "$(date '+%Y-%m-%d %H:%M:%S') No internet connection, skipping this run" >> "$LOG_DIR/skipped.log"
+  exit 0
+fi
+
 rclone sync "$SRC" "$DEST" \
   --filter-from "$FILTERS" \
   --backup-dir "gdrive:MacBackup/_deleted-or-changed/$(date +%Y-%m-%d)" \
