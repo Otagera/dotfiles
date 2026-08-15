@@ -7,7 +7,7 @@ set -o pipefail
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 
 SRC="$HOME/secrets-to-backup"
-DEST="gdrive-crypt:"
+DEST="gdrive-crypt:current"
 LOG_DIR="$HOME/Library/Logs/rclone-backup"
 mkdir -p "$LOG_DIR"
 
