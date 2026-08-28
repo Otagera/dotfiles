@@ -1,6 +1,9 @@
-// General-purpose dev layout: editor + shell + lazygit, with the
-// default tab-bar/status-bar so keybindings stay discoverable while
-// getting used to zellij.
+// General-purpose dev layout: nvim + shell + lazygit, with the default
+// tab-bar/status-bar so keybindings stay discoverable while getting used
+// to zellij. File browsing uses nvim's own built-in explorer (<leader>e)
+// since it opens directly into the same editor instance. yazi and the LLM
+// CLI each get their own full-screen tab — both were too cramped as a
+// shared pane quadrant.
 //
 // Usage: zellij --layout dev   (or the `dev` shell alias)
 //
@@ -19,18 +22,20 @@ layout {
     }
 
     tab name="dev" split_direction="vertical" {
-        pane size="70%" {
+        pane size="80%" {
             command "nvim"
         }
-        pane split_direction="horizontal" size="30%" {
+        pane split_direction="horizontal" size="20%" {
             pane focus=true
             pane command="lazygit"
         }
     }
 
-    // Full-screen tab for the LLM CLI — a shared pane quadrant is too
-    // cramped for reading long responses/diffs comfortably.
     tab name="llm" {
         pane command="/Users/othnielagera/dotfiles/bin/llm.sh"
+    }
+
+    tab name="files" {
+        pane command="yazi"
     }
 }

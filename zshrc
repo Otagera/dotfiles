@@ -118,6 +118,16 @@ alias claude-personal='CLAUDE_CONFIG_DIR=~/.claude-personal /Users/othnielagera/
 alias claude="echo 'Use specific commands: claude-work or claude-personal'"
 
 alias dev='zellij --layout dev'
+
+# yazi: cd the shell to wherever you navigated on quit (from yazi's own docs)
+function y() {
+	local tmp cwd
+	tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd" || builtin true
+	command rm -f -- "$tmp"
+}
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 
