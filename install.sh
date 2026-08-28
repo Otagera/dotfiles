@@ -24,8 +24,13 @@ link ssh_config .ssh/config
 chmod 700 "$HOME/.ssh"
 chmod 644 "$HOME/.ssh/config"
 
+mkdir -p "$HOME/.config/ghostty"
+link starship.toml .config/starship.toml
+link ghostty_config .config/ghostty/config
+
 chmod +x "$DOTFILES/bin/rclone-backup-personal.sh"
 chmod +x "$DOTFILES/bin/rclone-backup-encrypted.sh"
+chmod +x "$DOTFILES/bin/llm.sh"
 mkdir -p "$HOME/Library/Logs/rclone-backup"
 mkdir -p "$HOME/secrets-to-backup"
 cp "$DOTFILES/com.othnielagera.rclone-backup-personal.plist" "$HOME/Library/LaunchAgents/"
