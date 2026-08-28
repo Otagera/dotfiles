@@ -27,4 +27,10 @@ layout {
             pane command="lazygit"
         }
     }
+
+    // Full-screen tab for the LLM CLI — a shared pane quadrant is too
+    // cramped for reading long responses/diffs comfortably.
+    tab name="llm" {
+        pane command="/Users/othnielagera/dotfiles/bin/llm.sh"
+    }
 }
