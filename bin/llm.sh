@@ -64,10 +64,16 @@ if [[ ${#options[@]} -eq 1 ]]; then
     run_choice "${options[0]}" "$@"
 fi
 
-PS3="Pick an assistant: "
+PS3="Pick an assistant (number or name): "
 select choice in "${options[@]}"; do
     if [[ -n "${choice:-}" ]]; then
         run_choice "$choice" "$@"
     fi
+    # select only matches numbers by default — also accept the name typed directly
+    for opt in "${options[@]}"; do
+        if [[ "$REPLY" == "$opt" ]]; then
+            run_choice "$opt" "$@"
+        fi
+    done
     echo "Not a valid option, try again."
 done
