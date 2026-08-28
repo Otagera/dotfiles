@@ -43,6 +43,10 @@ Both jobs skip themselves gracefully (and log to `~/Library/Logs/rclone-backup/s
 
 Backup logs land in `~/Library/Logs/rclone-backup/`.
 
+- `zellij/dev.kdl` — general-purpose terminal layout: nvim + shell + lazygit, with zellij's built-in tab-bar/status-bar so keybindings stay visible. Launch with `dev` (aliased to `zellij --layout dev`). No hardcoded `cwd` — inherits wherever you launched it from.
+
+`yazi` (terminal file manager) is tracked in `Brewfile`, installed standalone for now — not wired into the `dev` layout yet.
+
 `lazygit` and `mergiraf` are tracked in `Brewfile` (installed via `brew install`, auto-captured by the `brew` wrapper in `zshrc`). Mergiraf's merge driver is registered globally in `gitconfig` (`[merge "mergiraf"]` — there's no built-in installer command, this was hand-written against `mergiraf merge --help`'s actual flags). It's still opt-in per repo/language though — add a line to that repo's `.gitattributes` for whichever file types you want it handling, e.g. `*.rs merge=mergiraf`.
 
 ## Keeping it up to date

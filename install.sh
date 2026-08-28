@@ -28,6 +28,9 @@ mkdir -p "$HOME/.config/ghostty"
 link starship.toml .config/starship.toml
 link ghostty_config .config/ghostty/config
 
+mkdir -p "$HOME/.config/zellij/layouts"
+link zellij/dev.kdl .config/zellij/layouts/dev.kdl
+
 chmod +x "$DOTFILES/bin/rclone-backup-personal.sh"
 chmod +x "$DOTFILES/bin/rclone-backup-encrypted.sh"
 chmod +x "$DOTFILES/bin/llm.sh"
