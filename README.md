@@ -33,7 +33,7 @@ launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.othnielagera.rclone-
 - `ssh_config` — routes `gitlab.com` to the work key, `github.com` to the personal key
 - `Brewfile` — snapshot of installed Homebrew formulae/casks (`brew bundle dump`)
 - `rclone-filters.txt` — excludes regenerable build output (node_modules, target, venv, etc.) from the personal backup
-- `starship.toml` — prompt config, Catppuccin Mocha palette, language segments for Node/Rust/Go/Java/C#/Python
+- `starship.toml` — prompt config, Catppuccin Mocha palette, language segments for Node/Rust/Go/Java/.NET(C#)/Python
 - `ghostty_config` — Catppuccin Mocha theme (bundled with Ghostty, no extra install needed)
 - `bin/llm.sh` — launches whichever LLM CLI is available (`$LLM_CLI` override, else `opencode`). Deliberately does **not** auto-launch bare `claude` — see comments in the file for why (it'd bypass the work/personal identity split)
 - `bin/rclone-backup-personal.sh` + `com.othnielagera.rclone-backup-personal.plist` — backs up `~/source/personal_stuv` to Google Drive (`gdrive:MacBackup/personal_stuv`) every 6 hours (plus once on login/wake). **Scoped to personal_stuv only** — never points at `~/source/ravebyflutterwave` (work code), by design.
@@ -43,7 +43,7 @@ Both jobs skip themselves gracefully (and log to `~/Library/Logs/rclone-backup/s
 
 Backup logs land in `~/Library/Logs/rclone-backup/`.
 
-`lazygit` and `mergiraf` are tracked in `Brewfile` (installed via `brew install`, auto-captured by the `brew` wrapper in `zshrc`). Mergiraf needs a one-time `mergiraf install` to register itself as a git merge driver globally — then per-repo, add a line to that repo's `.gitattributes` for whichever file types you want it handling, e.g. `*.rs merge=mergiraf`.
+`lazygit` and `mergiraf` are tracked in `Brewfile` (installed via `brew install`, auto-captured by the `brew` wrapper in `zshrc`). Mergiraf's merge driver is registered globally in `gitconfig` (`[merge "mergiraf"]` — there's no built-in installer command, this was hand-written against `mergiraf merge --help`'s actual flags). It's still opt-in per repo/language though — add a line to that repo's `.gitattributes` for whichever file types you want it handling, e.g. `*.rs merge=mergiraf`.
 
 ## Keeping it up to date
 

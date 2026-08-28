@@ -17,7 +17,7 @@ $nodejs\
 $rust\
 $golang\
 $java\
-$csharp\
+$dotnet\
 $python\
 $cmd_duration
 $character"""
@@ -88,7 +88,7 @@ symbol = " "
 style = "red bold"
 format = "via [$symbol$version]($style) "
 
-[csharp]
+[dotnet]
 symbol = " "
 style = "mauve bold"
 format = "via [$symbol$version]($style) "

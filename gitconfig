@@ -74,5 +74,9 @@
 	navigate = true
 	light = false
 
+[merge "mergiraf"]
+	name = mergiraf
+	driver = mergiraf merge --git -p %P -l %L %O %A %B
+
 [color]
 	ui = auto

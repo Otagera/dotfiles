@@ -129,7 +129,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # Auto-refresh ~/dotfiles/Brewfile after any brew install/uninstall/tap change
 brew() {
   command brew "$@"
-  local status=$?
+  local brew_exit_code=$?
   case "$1" in
     install|uninstall|rm|reinstall|tap|untap)
       (
@@ -143,7 +143,7 @@ brew() {
       )
       ;;
   esac
-  return $status
+  return $brew_exit_code
 }
 
 eval "$(starship init zsh)"
