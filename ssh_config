@@ -4,6 +4,8 @@ Host gitlab.com
 	User git
 	IdentityFile ~/.ssh/id_ed25519
 	IdentitiesOnly yes
+	AddKeysToAgent yes
+	UseKeychain yes
 
 # Personal (GitHub)
 Host github.com
@@ -11,3 +13,5 @@ Host github.com
 	User git
 	IdentityFile ~/.ssh/id_ed25519_personal
 	IdentitiesOnly yes
+	AddKeysToAgent yes
+	UseKeychain yes
