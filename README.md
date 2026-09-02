@@ -36,14 +36,14 @@ launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.othnielagera.rclone-
 - `starship.toml` — prompt config, Catppuccin Mocha palette, language segments for Node/Rust/Go/Java/.NET(C#)/Python
 - `ghostty_config` — Catppuccin Mocha theme (bundled with Ghostty, no extra install needed)
 - `bin/llm.sh` — launches whichever LLM CLI is available (`$LLM_CLI` override, else `opencode`). Deliberately does **not** auto-launch bare `claude` — see comments in the file for why (it'd bypass the work/personal identity split)
-- `bin/rclone-backup-personal.sh` + `com.othnielagera.rclone-backup-personal.plist` — backs up `~/source/personal_stuv` to Google Drive (`gdrive:MacBackup/personal_stuv`) every 6 hours (plus once on login/wake). **Scoped to personal_stuv only** — never points at `~/source/ravebyflutterwave` (work code), by design.
+- `bin/rclone-backup-personal.sh` + `com.othnielagera.rclone-backup-personal.plist` — backs up `~/source/personal_stuv` (`gdrive:MacBackup/personal_stuv`) and `~/Documents/Sapience` (`gdrive:MacBackup/Sapience`, mostly-personal notes) every 6 hours (plus once on login/wake). **Never points at `~/source/ravebyflutterwave`** (work code), by design.
 - `bin/rclone-backup-encrypted.sh` + `com.othnielagera.rclone-backup-encrypted.plist` — encrypts and backs up `~/secrets-to-backup` (e.g. TablePlus connection exports — anything that may carry saved passwords) via the `gdrive-crypt` remote, same schedule. Drop a fresh export in that folder whenever it changes; there's no way to automate the export step itself (no CLI for that).
 
 Both jobs skip themselves gracefully (and log to `~/Library/Logs/rclone-backup/skipped*.log`) when there's no internet connection, rather than hanging/retrying.
 
 Backup logs land in `~/Library/Logs/rclone-backup/`.
 
-- `zellij/dev.kdl` — general-purpose terminal layout: `dev` tab (yazi sidebar + nvim + shell + lazygit) and a full-screen `llm` tab (LLM CLI — a shared pane quadrant was too cramped for it). Built-in tab-bar/status-bar keep keybindings visible. Launch with `dev` (aliased to `zellij --layout dev`). No hardcoded `cwd` — inherits wherever you launched it from.
+- `zellij/dev.kdl` — general-purpose terminal layout: `dev` tab (nvim + shell + lazygit — file browsing uses nvim's own `<leader>e` explorer instead of a sidebar), `llm` tab (LLM CLI), `files` tab (yazi). Each got its own full-screen tab rather than sharing cramped pane quadrants. Built-in tab-bar/status-bar keep keybindings visible. Launch with `dev` (aliased to `zellij --layout dev`). No hardcoded `cwd` — inherits wherever you launched it from.
 
 `yazi` (terminal file manager) is tracked in `Brewfile`. The `y` shell function (cd's into wherever you navigated on quit, from yazi's own docs) is in `zshrc`, for standalone use outside the layout.
 
