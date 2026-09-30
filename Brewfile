@@ -1,6 +1,8 @@
 tap "anomalyco/tap"
 tap "mongodb/brew", trusted: true
 tap "paradise-runner/tap"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
 # GitHub command-line tool
 brew "gh"
 # Distributed revision control system
@@ -53,4 +55,4 @@ cask "ghostty"
 # Replacement for Docker Desktop
 cask "orbstack"
 cargo "grrs"
-npm "corepack"
+npm "nodemon"
