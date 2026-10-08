@@ -54,7 +54,5 @@ brew "paradise-runner/tap/toast", trusted: true
 cask "font-fira-code-nerd-font"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
-# Replacement for Docker Desktop
-cask "orbstack"
 cargo "grrs"
 npm "nodemon"
