@@ -21,6 +21,8 @@ brew "neovim"
 brew "openjdk"
 # Open-source vector similarity search for Postgres
 brew "pgvector"
+# Adds support for geographic objects to PostgreSQL
+brew "postgis"
 # Object-relational database system
 brew "postgresql@16"
 # Object-relational database system
