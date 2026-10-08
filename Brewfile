@@ -21,6 +21,8 @@ brew "neovim"
 brew "openjdk"
 # Open-source vector similarity search for Postgres
 brew "pgvector"
+# Single-file executable tool for creating, reading and uploading PMTiles archives
+brew "pmtiles"
 # Adds support for geographic objects to PostgreSQL
 brew "postgis"
 # Object-relational database system
