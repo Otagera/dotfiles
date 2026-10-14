@@ -17,6 +17,8 @@ brew "mergiraf"
 brew "mysql@8.0", restart_service: :changed, link: true
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
+brew "nginx"
 # Development kit for the Java programming language
 brew "openjdk"
 # Open-source vector similarity search for Postgres
