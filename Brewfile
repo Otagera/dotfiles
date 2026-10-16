@@ -1,4 +1,4 @@
-tap "anomalyco/tap", trusted: { formulae: ["opencode-v2"] }
+tap "anomalyco/tap"
 tap "mongodb/brew", trusted: true
 tap "paradise-runner/tap"
 # Play, record, convert, and stream select audio and video codecs
@@ -50,7 +50,9 @@ brew "zsh-autocomplete"
 # Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
 # The AI coding agent built for the terminal.
-brew "anomalyco/tap/opencode", trusted: true
+brew "anomalyco/tap/opencode", link: false, trusted: true
+# OpenCode V2 - the AI coding agent for the terminal
+brew "anomalyco/tap/opencode-v2", trusted: true
 # High-performance, schema-free, document-oriented database
 brew "mongodb/brew/mongodb-community@7.0"
 # In-terminal IDE for quick file edits
