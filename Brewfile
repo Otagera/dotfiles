@@ -49,8 +49,6 @@ brew "zellij"
 brew "zsh-autocomplete"
 # Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
-# The AI coding agent built for the terminal.
-brew "anomalyco/tap/opencode", link: false, trusted: true
 # OpenCode V2 - the AI coding agent for the terminal
 brew "anomalyco/tap/opencode-v2", trusted: true
 # High-performance, schema-free, document-oriented database
