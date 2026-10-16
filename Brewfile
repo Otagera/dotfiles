@@ -1,4 +1,4 @@
-tap "anomalyco/tap"
+tap "anomalyco/tap", trusted: { formulae: ["opencode-v2"] }
 tap "mongodb/brew", trusted: true
 tap "paradise-runner/tap"
 # Play, record, convert, and stream select audio and video codecs
