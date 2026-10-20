@@ -14,7 +14,7 @@ brew "lazygit"
 # Syntax-aware git merge driver
 brew "mergiraf"
 # Open source relational database management system
-brew "mysql@8.0", restart_service: :changed, link: true
+brew "mysql@8.0", link: true
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
