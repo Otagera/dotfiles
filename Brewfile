@@ -1,6 +1,8 @@
 tap "anomalyco/tap"
 tap "mongodb/brew", trusted: true
 tap "paradise-runner/tap"
+# Cross-platform make
+brew "cmake"
 # Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
 # GitHub command-line tool
@@ -11,14 +13,20 @@ brew "git"
 brew "git-delta"
 # Simple terminal UI for git commands
 brew "lazygit"
+# C library for reading, creating, and modifying zip archives
+brew "libzip"
 # Syntax-aware git merge driver
 brew "mergiraf"
 # Open source relational database management system
-brew "mysql@8.0", link: true
+brew "mysql@8.0", restart_service: :changed, link: true
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server
 brew "nginx"
+# Small build system for use with gyp or CMake
+brew "ninja"
+# Implementation of the OpenAL 3D audio API
+brew "openal-soft"
 # Development kit for the Java programming language
 brew "openjdk"
 # Open-source vector similarity search for Postgres
