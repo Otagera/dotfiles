@@ -11,6 +11,8 @@ brew "gh"
 brew "git"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
+# Open-source GitLab command-line tool
+brew "glab"
 # Simple terminal UI for git commands
 brew "lazygit"
 # C library for reading, creating, and modifying zip archives
@@ -70,3 +72,4 @@ cask "ghostty"
 cask "orbstack", args: { appdir: "~/Applications" }
 cargo "grrs"
 npm "nodemon"
+npm "pnpm"
