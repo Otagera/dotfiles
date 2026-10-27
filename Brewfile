@@ -43,6 +43,8 @@ brew "postgresql@16"
 brew "postgresql@17", restart_service: :changed, link: true
 # Python version management
 brew "pyenv"
+# Develop and deploy code with zero configuration
+brew "railway"
 # Ruby version manager
 brew "rbenv"
 # Rsync for cloud storage
@@ -71,5 +73,5 @@ cask "ghostty"
 # Replacement for Docker Desktop
 cask "orbstack", args: { appdir: "~/Applications" }
 cargo "grrs"
+npm "corepack"
 npm "nodemon"
-npm "pnpm"
