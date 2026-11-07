@@ -13,6 +13,8 @@ brew "git"
 brew "git-delta"
 # Open-source GitLab command-line tool
 brew "glab"
+# Tool to unpack installers created by Inno Setup
+brew "innoextract"
 # Simple terminal UI for git commands
 brew "lazygit"
 # C library for reading, creating, and modifying zip archives
@@ -73,5 +75,6 @@ cask "ghostty"
 # Replacement for Docker Desktop
 cask "orbstack", args: { appdir: "~/Applications" }
 cargo "grrs"
-npm "corepack"
+npm "@openai/codex"
 npm "nodemon"
+npm "pnpm"
